@@ -15,7 +15,7 @@ permits, enforced at both the UI and the service layer.
   the service layer if bypassed
 
 ## Requirements
-- JDK 17+ (you likely have this already — resume mentions VS Code/Maven)
+- JDK 17+ 
 - MySQL Server running locally
 - MySQL Connector/J (JDBC driver) — download the jar from
   `https://dev.mysql.com/downloads/connector/j/` (choose "Platform Independent")
@@ -73,23 +73,3 @@ src/
     TransactionHistoryDialog.java
 ```
 
-## Resume bullets (once you've run it end-to-end)
-- Built a GUI-based banking application in Java (Swing) with JDBC/MySQL backend,
-  implementing salted-hash authentication, deposits, withdrawals, transfers, and
-  transaction history.
-- Designed a data-driven Role-Based Access Control (RBAC) model with least-privilege
-  enforcement — Admin, Teller, and Customer roles each mapped to a distinct
-  permission set stored in the database rather than hardcoded in application logic.
-- Implemented atomic fund transfers using JDBC transactions (commit/rollback) to
-  guarantee consistency between the debit and credit legs.
-- Designed and normalized a relational MySQL schema (accounts, transactions, users,
-  roles, permissions) with CRUD operations via JDBC PreparedStatement.
-
-## Honest scope (know this before an interviewer asks)
-- Password hashing is SHA-256 + salt, not BCrypt/Argon2 — fine for an academic
-  project, and you should be ready to name BCrypt as the production-grade upgrade.
-- No session tokens, no account lockout after failed logins, no MFA — reasonable
-  "future work" answers if asked what you'd add with more time.
-- This was rebuilt from scratch after the original (built in 2nd sem) was lost —
-  if asked directly, just say that; it's a normal thing to happen, not something
-  to hide or overstate.
